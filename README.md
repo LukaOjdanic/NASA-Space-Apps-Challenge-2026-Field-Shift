@@ -132,3 +132,7 @@ ERA5: ECMWF Reanalysis
 
 
 # Comments: the requrements.txt file is outdated since I am using uv as my python package manager (but I might leave it for familiarity)
+
+
+# In fetch soil grids there is a slider that needs to be explained (for validity):
+    "SoilGrids reports loam-clay-loam with ~12% coarse fragments and ~11.7% organic matter at this point. Local MONTEVITIS/Plantaže descriptions of Ćemovsko polje indicate skeletal, gravelly, shallow soil with much lower OM. The 250 m interpolated cell likely mixes vineyard, scrub, and bare karst. Use the karst-correction slider to bracket the uncertainty."
