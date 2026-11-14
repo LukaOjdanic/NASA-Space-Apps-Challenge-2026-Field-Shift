@@ -129,3 +129,6 @@ ERA5: ECMWF Reanalysis
 : ERA5 is a global reanalysis dataset that provides hourly climate variables such as temperature, precipitation, wind, humidity, soil temperature, and radiation. Participants may use ERA5 to fill gaps where local weather stations are sparse, analyze long‑term climate trends, build temporal features for SI models, and contextualize NASA Earth observations with continuous climate time series.
 
 
+
+
+# Comments: the requrements.txt file is outdated since I am using uv as my python package manager (but I might leave it for familiarity)
