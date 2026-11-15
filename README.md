@@ -42,6 +42,10 @@ The agronomic tension is real and documented: cover crops protect soil from eros
 ## Quickstart
 
 ```bash
+# Required
+python 3.14
+uv (https://docs.astral.sh/uv/)
+
 # 1. install
 uv add streamlit plotly pandas numpy requests folium streamlit-folium
 
@@ -61,7 +65,7 @@ uv run python src/demo_score.py
 uv run streamlit run app.py
 ```
 
-The app reads **only local files in `data/`** — no live API calls during a demo. Keep `data/` committed so a deployed instance works.
+The app reads **only local files in `data/`** — no live API calls.
 
 ---
 
@@ -76,7 +80,7 @@ The app reads **only local files in `data/`** — no live API calls during a dem
 | **SMAP L4** (`SPL4SMGP`, AppEEARS) | Root-zone soil moisture → day-of-year percentile anomaly vs 2015+ | 9 km, 3-hourly | ⏳ ordered, processing |
 | **ECOSTRESS** (`ECO_L2_LSTE`, AppEEARS) | Land-surface temperature → illustrative hot-block snapshot | ~70 m, irregular ISS overpasses | ⏳ ordered, processing |
 
-**Deliberately skipped:** SSURGO/WSS, CropScape CDL, OpenET, PRISM, NAIP, NASS — all US-only and unavailable for Montenegro. SRTM slope was skipped because Ćemovsko polje is a flat plain (erosion there is driven by bareness + torrential rain, not gradient).
+**Deliberately skipped:** SSURGO/WSS, CropScape CDL, OpenET, PRISM, NAIP, NASS — all US-only and unavailable for Montenegro. SRTM slope was skipped because Ćemovsko polje is a flat plain (erosion there is driven by bareness + torrential rain, not gradient). In case the project scope is expanded to a field that is not a flat plain the SRTM slope needs to be included.
 
 ---
 
