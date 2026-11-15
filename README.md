@@ -22,6 +22,8 @@ Grapevines are a 30+ year perennial — they cannot be rotated. But the **alley 
 
 The agronomic tension is real and documented: cover crops protect soil from erosion and add nitrogen and organic matter, but on shallow skeletal karst soils they compete with the vines for water in exactly the driest months. The winter-legume cycle is the compromise hypothesis the tool tests.
 
+Link to the project presentation slide deck: https://canva.link/smlpee5icdx6pqv
+
 ---
 
 ## Status snapshot
