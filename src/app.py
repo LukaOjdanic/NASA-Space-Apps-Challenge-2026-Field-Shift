@@ -217,7 +217,7 @@ if not (DATA / "strategies.csv").exists():
 STRATS = pd.read_csv(DATA / "strategies.csv").set_index("id")
 
 try:
-    import score as score_mod
+    import scoring as score_mod
     score_fn, SCORE_SRC = score_mod.score, "src/score.py"
 except Exception:
     SCORE_SRC = "embedded fallback (src/score.py not importable)"
