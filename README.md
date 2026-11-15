@@ -79,38 +79,10 @@ The app reads **only local files in `data/`** — no live API calls.
 | **GPM IMERG** (via POWER `PRECTOTCORR`) | Bias-corrected precipitation → dry-spell length, winter storm days | ~0.1°, daily | ✅ used |
 | **ISRIC SoilGrids v2** *(non-NASA)* | `wv0033`, `wv1500`, `cfvo`, `soc`, `clay`, `sand`, `bdod` → available water capacity, organic carbon, texture | 250 m, 6 depths | ✅ used |
 | **FAO-56 + cover-crop literature** | Crop coefficients, N-fixation ranges, USLE-style cover factors, labor assumptions | — | ✅ used (hand-authored constants) |
-| **SMAP L4** (`SPL4SMGP`, AppEEARS) | Root-zone soil moisture → day-of-year percentile anomaly vs 2015+ | 9 km, 3-hourly | ⏳ ordered, processing |
-| **ECOSTRESS** (`ECO_L2_LSTE`, AppEEARS) | Land-surface temperature → illustrative hot-block snapshot | ~70 m, irregular ISS overpasses | ⏳ ordered, processing |
+| **SMAP L4** (`SPL4SMGP`, AppEEARS) | Root-zone soil moisture → day-of-year percentile anomaly vs 2015+ | 9 km, 3-hourly | ✅ used |
+| **ECOSTRESS** (`ECO_L2_LSTE`, AppEEARS) | Land-surface temperature → illustrative hot-block snapshot | ~70 m, irregular ISS overpasses | ✅ used |
 
 **Deliberately skipped:** SSURGO/WSS, CropScape CDL, OpenET, PRISM, NAIP, NASS — all US-only and unavailable for Montenegro. SRTM slope was skipped because Ćemovsko polje is a flat plain (erosion there is driven by bareness + torrential rain, not gradient). In case the project scope is expanded to a field that is not a flat plain the SRTM slope needs to be included.
-
----
-
-## Repository layout
-
-```
-.
-├── app.py                      # Streamlit UI — reads only data/
-├── src/
-│   ├── fetch_nasa_power.py     # POWER daily point pull → data/POWER_*.csv
-│   ├── fetch_soilgrids.py      # SoilGrids → parsed CSV + soil_constants.json
-│   ├── indicators.py           # cached data → data/indicators.json (+ chart CSVs)
-│   ├── score.py                # transparent multi-criteria scoring
-│   └── demo_score.py           # headless ranking check across 3 personas
-└── data/
-    ├── POWER_Point_Daily_*.csv # raw POWER (YEAR,DOY layout, SI units)
-    ├── soilgrids_raw.json      # raw API response (evidence)
-    ├── soilgrids_parsed.csv    # scaled property × depth table
-    ├── soilgrids_paw.csv       # plant-available water fraction per depth
-    ├── soil_constants.json     # AWC 0–30/60/100 cm, SOC, texture, caveats
-    ├── strategies.csv          # 3 rotations: traits + benefit/risk/assumption text
-    ├── sources.csv             # constant → source → confidence register
-    ├── indicators.json         # the six scoring inputs + meta.gaps
-    ├── yearly_summary.csv      # per-year counts for the trend chart
-    ├── daily_<year>.csv        # target-season series for the heat calendar
-    ├── blocks.geojson          # optional: real block polygons (geojson.io)
-    └── smap_l4.csv             # ⏳ drop the AppEEARS export here
-```
 
 ---
 
