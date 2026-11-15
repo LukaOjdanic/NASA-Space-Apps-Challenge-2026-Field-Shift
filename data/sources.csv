@@ -1,6 +1,6 @@
 constant,source,confidence,note
 vine_kc,FAO-56 Table 12 (Allen et al. 1998),medium,verify training system
-cover_kc,FAO-56 cover crop guidance,low,monthly shape interpolated
+FAO-56 dual-Kc framework (Allen et al. 1998), §7; monthly shape interpolated — expert assumption,low,monthly shape interpolated
 n_fix_range,Mediterranean legume cover literature (e.g. Novara 2021),low,local verification needed
 erosion_c,USLE C-factor tables + vineyard cover-crop trials,medium,
 water_competition,Delpuech 2018 (soil depth x cover fraction),medium,drives the shallow-soil penalty
