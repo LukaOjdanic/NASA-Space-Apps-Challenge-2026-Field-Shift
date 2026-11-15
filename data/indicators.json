@@ -1,0 +1,31 @@
+{
+  "hot_days_ripening": 42,
+  "hot_days_flowering": 6,
+  "warm_nights_ripening": 49,
+  "dry_spell_days": 45,
+  "winter_storm_days": 21,
+  "smap_pct": 50.0,
+  "smap_date": null,
+  "awc_mm": 50.5,
+  "soc_g_kg": 68.0,
+  "meta": {
+    "year": 2026,
+    "power_file": "POWER_Point_Daily_19900101_20261113_042d38N_019d28E_LST.csv",
+    "median_annual_precip_mm": 1351.0,
+    "rooting_depth_cm": 30,
+    "gaps": [
+      "Loaded POWER_Point_Daily_19900101_20261113_042d38N_019d28E_LST.csv",
+      "Elevation adjustment: POWER grid mean 933 m vs vineyard ~50 m; +5.7 C applied to temperatures (lapse rate 6.5 C/km). Raw values kept as *_raw. First-order downscaling \u2014 validate against a local station before farm decisions.",
+      "Target season: 2026. Thresholds: heat >= 35.0 C, warm night >= 20.0 C, storm >= 20.0 mm/day, dry day < 1.0 mm.",
+      "Winter storms counted Nov 2025 - Feb 2026 (winter preceding the season).",
+      "SMAP file not present; neutral percentile (50) assumed.",
+      "SoilGrids 250 m grid under-resolves karst; local soils likely shallower/stonier.",
+      "POWER point (42.38,19.28) differs from soil/block centroid (42.42,19.33); re-pull POWER at the unified centroid."
+    ],
+    "sources": [
+      "NASA POWER daily (AG; PRECTOTCORR = GPM IMERG-corrected)",
+      "SMAP L4 root-zone soil moisture (if present)",
+      "ISRIC SoilGrids v2"
+    ]
+  }
+}

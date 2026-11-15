@@ -1,0 +1,18 @@
+{
+  "lat": 42.42,
+  "lon": 19.33,
+  "awc_0_30_mm": 50.5,
+  "awc_0_60_mm": 90.4,
+  "awc_0_100_mm": 142.1,
+  "soc_top_g_kg": 68.0,
+  "soc_0_30_g_kg": 35.4,
+  "texture_0_5cm": "loam",
+  "texture_15_30cm": "clay loam",
+  "cfvo_0_5_pct": 10.1,
+  "caveats": [
+    "SoilGrids 250 m interpolated product; karst heterogeneity not resolved.",
+    "Coarse-fragment correction applied; local stone cover may be much higher.",
+    "AWC assumes uniform soil to depth; vines may exploit deep karst fissures.",
+    "Verify against local soil survey / MONTEVITIS data before farm decisions."
+  ]
+}
