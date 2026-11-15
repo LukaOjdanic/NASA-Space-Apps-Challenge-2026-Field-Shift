@@ -36,8 +36,8 @@ Link to the project presentation slide deck: https://canva.link/smlpee5icdx6pqv
 | Scoring engine + grower priority weights | ✅ working |
 | Streamlit app (4 tabs, live re-ranking) | ✅ working |
 | Elevation bias correction (disclosed, toggleable) | ✅ working |
-| **SMAP L4 root-zone moisture** | ⏳ **awaiting AppEEARS processing** — neutral percentile 50 assumed and declared |
-| **ECOSTRESS LST snapshot** | ⏳ **awaiting AppEEARS processing** — not yet wired in |
+| **SMAP L4 root-zone moisture** | ✅ working |
+| **ECOSTRESS LST snapshot** | ✅ working |
 
 ---
 
@@ -237,18 +237,7 @@ License: MIT
 
 ## 📍 Where I am right now
 
-**The pipeline is complete and the app runs end-to-end on real data.** Fetch → indicators → scoring → UI all work; the three strategies rank and re-rank live as the grower's priorities change, and every assumption is disclosed in the Evidence tab.
-
-**The only remaining work is integrating the two satellite products still in the AppEEARS queue:**
-
-1. **SMAP L4 (`SPL4SMGP`, root-zone soil moisture, 2015-04-01 → present, block centroid).**
-   This is essentially **drop-in**. `src/indicators.py` already globs `data/*SMAP*.csv`, finds the root-zone column, resamples to daily means and computes the day-of-year percentile. When the order lands:
-   - save it as `data/smap_l4.csv` (any filename containing `SMAP` works),
-   - press **Refresh data** in the sidebar (or re-run `src/indicators.py`),
-   - the neutral `smap_pct = 50` is replaced by the observed percentile, the SMAP pill turns green, the gauge renders, the water scores update and the "SMAP pending" gap disappears automatically. **No code changes expected** — only verify the export's time and root-zone column names match the parser.
-
-2. **ECOSTRESS (`ECO_L2_LSTE`, LST, summers 2019–2025, same point).**
-   This one needs a **small amount of new code**: a reader for the sparse swath granules plus an illustrative "hot-block snapshot" panel in the Heat & water tab. It was always scoped as a bonus layer — overpasses over Montenegro are irregular and cloud-affected — so if the granules turn out to be unusable, the honest fallback is to leave it listed under information gaps.
+**The pipeline is complete and the app runs end-to-end on real data.** Fetch → indicators → scoring → UI all work; the three strategies rank and re-rank live as the grower's priorities change, and every assumption is disclosed in the Evidence tab. The AppEEARS data is incorporated.
 
 Everything else on the roadmap is post-hackathon polish.
 

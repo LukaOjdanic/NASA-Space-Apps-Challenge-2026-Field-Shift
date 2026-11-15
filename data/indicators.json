@@ -4,8 +4,8 @@
   "warm_nights_ripening": 49,
   "dry_spell_days": 45,
   "winter_storm_days": 21,
-  "smap_pct": 50.0,
-  "smap_date": null,
+  "smap_pct": 41.9,
+  "smap_date": "2026-07-31",
   "awc_mm": 50.5,
   "soc_g_kg": 68.0,
   "meta": {
@@ -18,7 +18,7 @@
       "Elevation adjustment: POWER grid mean 933 m vs vineyard ~50 m; +5.7 C applied to temperatures (lapse rate 6.5 C/km). Raw values kept as *_raw. First-order downscaling \u2014 validate against a local station before farm decisions.",
       "Target season: 2026. Thresholds: heat >= 35.0 C, warm night >= 20.0 C, storm >= 20.0 mm/day, dry day < 1.0 mm.",
       "Winter storms counted Nov 2025 - Feb 2026 (winter preceding the season).",
-      "SMAP file not present; neutral percentile (50) assumed.",
+      "SMAP percentile vs 372 daily values within +/-15 days of DOY 212 (2015+); 9 km pixel, not block-scale.",
       "SoilGrids 250 m grid under-resolves karst; local soils likely shallower/stonier.",
       "POWER point (42.38,19.28) differs from soil/block centroid (42.42,19.33); re-pull POWER at the unified centroid."
     ],

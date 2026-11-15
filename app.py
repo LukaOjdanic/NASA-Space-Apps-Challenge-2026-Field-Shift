@@ -520,6 +520,31 @@ with tab_evidence:
 <div class="bar-track" style="margin:.4rem 0"><div class="bar-fill" style="width:{pct}%;background:linear-gradient(90deg,{C['water']},{C['leaf']})"></div></div>
 <div class="td">vs ~120 mm reference bucket · coarse-fragment corrected · SOC {ind['soc_g_kg']:.0f} g/kg {'(lab override)' if soc_on else '(grid — karst caveat)'}<br>
 A small bucket is why permanent grass is risky here: it drinks from the same reserve as the vines.</div></div>""", unsafe_allow_html=True)
+    section("ECOSTRESS · surface-temperature snapshots")
+    eco_p, eco_s = DATA / "ecostress_lst.csv", DATA / "ecostress_summary.json"
+    if eco_p.exists():
+        eco = pd.read_csv(eco_p)
+        es = json.loads(eco_s.read_text()) if eco_s.exists() else {}
+        try:
+            import plotly.express as px
+            fig = px.scatter(eco, x="date_local", y="lst_c", color="hour_local",
+                             color_continuous_scale=[C["water"], C["leaf"], C["heat"], C["danger"]],
+                             labels={"date_local": "Overpass (local time)", "lst_c": "LST (°C)",
+                                     "hour_local": "Hour of day"})
+            fig.update_traces(marker=dict(size=9, line=dict(width=0)))
+            fig.update_layout(height=320, xaxis=dict(gridcolor=C["line"]),
+                              yaxis=dict(gridcolor=C["line"]))
+            show_fig(fig)
+        except Exception as e:
+            st.markdown(table_html(eco.tail(15)), unsafe_allow_html=True)
+        st.markdown(f'<div class="rs-note">🛰️ <b>{es.get("n_usable", len(eco))} usable scenes</b> '
+                    f'from {es.get("n_scenes", "?")} overpasses '
+                    f'({es.get("n_usable_summer", "?")} in Jun–Aug). '
+                    f'Surface temperature ≠ air temperature; point is ~6.5 km from the block. '
+                    f'<b>Illustrative only — not scored.</b></div>', unsafe_allow_html=True)
+    else:
+        st.markdown('<div class="rs-note">Run <code>src/ecostress.py</code> to build the snapshot layer.</div>',
+                    unsafe_allow_html=True)
 
 # ---------------------------------------------------------------- tab 3: map
 with tab_map:

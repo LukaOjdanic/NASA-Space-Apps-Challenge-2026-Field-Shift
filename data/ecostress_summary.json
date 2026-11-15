@@ -1,0 +1,23 @@
+{
+  "source_file": "RowShift-ECOSTRESS-LST-ECO-L2-LSTE-002-results.csv",
+  "product": "ECO_L2_LSTE (v002)",
+  "point": [
+    42.376547237858176,
+    19.277023315429688
+  ],
+  "n_scenes": 913,
+  "n_usable": 499,
+  "n_usable_summer": 203,
+  "rejected": {
+    "fill_or_not_produced": 53,
+    "cloudy": 335
+  },
+  "max_lst_c": 47.35,
+  "max_summer_lst_c": 47.35,
+  "caveats": [
+    "LST is land-SURFACE temperature, not air temperature; bare sunlit soil can exceed air Tmax by 10-20 C.",
+    "Sampled 6.5 km from the block centroid -- regional illustration, NOT a block measurement.",
+    "ISS overpasses are irregular and at varying local times; scenes are not directly comparable.",
+    "Cloudy, 'pixel not produced' and non-nominal-quality scenes removed; counts above."
+  ]
+}
